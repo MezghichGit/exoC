@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1639667690 source:c:\users\amine\desktop\c++\exovector\main.cpp
+1639669344 source:c:\users\amine\desktop\c++\exovector\main.cpp
 	<iostream>
 	<vector>
+	<deque>
+	<list>
 
