@@ -24,7 +24,8 @@ public :
     //void afficher_c();
     void afficher();  // redefinition
 };
-void Point ::initialiser(int a, int b){
+void Point ::initialiser(int a, int b)
+{
     x = a;
     y = b;
 }
@@ -44,31 +45,77 @@ void PointCol::afficher() // c'est une rédéfinition
 template <typename T>
 T maximum(T a,  T b)
 {
-   if(a>b)
-      return a;
-   else
-      return b;
+    if(a>b)
+        return a;
+    else
+        return b;
 }
 
 
 template<typename T, typename S>
 S moyenne(T tableau[], int taille)
 {
-  S somme(0);                  //La somme des éléments du tableau
-  for(int i(0); i<taille; ++i)
-    somme += tableau[i];
+    S somme(0);                  //La somme des éléments du tableau
+    for(int i(0); i<taille; ++i)
+        somme += tableau[i];
 
-  return somme/taille;
+    return somme/taille;
 }
+
+class Compte
+{
+public:
+    float solde;
+    int id;
+    Compte(int, float);
+    Compte operator+(Compte);
+    void infoCompte();
+
+};
+
+Compte :: Compte(int d, float s)
+{
+    id = d;
+    solde = s;
+}
+Compte Compte :: operator+(Compte c)
+{
+    Compte temp(0,0);
+    temp.id = id;
+    temp.solde = c.solde + solde;
+    return temp;
+}
+void Compte :: infoCompte(){
+  cout << "id : " <<id <<" solde :  "<<solde<< endl;
+}
+
+
+template <typename T>
+T somme(T a,  T b)
+{
+   return a+b;
+}
+
 
 int main()
 {
-  int tab[4] = {10,10,10,10};
-  //Remplissage du tableau
+    Compte c1(1,100),c2(2,400);
+    Compte c3 = c1+c2;
+    c3.infoCompte();
 
-  cout << "Moyenne : " << moyenne<int,double>(tab,4) << endl;
+    Compte c4 = somme(c2,c3);
+    c4.infoCompte();
 
-  return 0;
+
+    int res = somme(2,6);
+    cout<<"2 + 6 = "<<res <<endl;
+
+    //int tab[4] = {15,10,10,10};
+    //Remplissage du tableau
+
+    //cout << "Moyenne : " << moyenne<int,double>(tab,4) << endl;
+
+    return 0;
 }
 
 /*
@@ -98,7 +145,7 @@ int main()
 
     cout << "afficher de la classe mere !" << endl;
     pc.Point::afficher();*/
-    //cout << pc.x <<endl;  // impossible
-    //cout << "Hello world!" << endl;
-    //return 0;
+//cout << pc.x <<endl;  // impossible
+//cout << "Hello world!" << endl;
+//return 0;
 //}
