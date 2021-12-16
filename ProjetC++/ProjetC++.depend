@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1639577085 source:c:\users\amine\desktop\c++\projetc++\main.cpp
+	<iostream>
+	"Point.h"
+
+1639578308 c:\users\amine\desktop\c++\projetc++\include\point.h
+
+1639575514 source:c:\users\amine\desktop\c++\projetc++\src\point.cpp
+	"Point.h"
+	<iostream>
+
