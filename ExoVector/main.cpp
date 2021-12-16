@@ -24,8 +24,22 @@ Animal::Animal(string n, string e)
 }
 int main()
 {
-    Animal a1("Toto","Chat");
-    a1.info();
+    Animal a1("Mac","Chien");
+    Animal a2("Pichou","Chat");
+    Animal a3("Toto","Oiseau");
+    //a1.info();
+    vector<Animal>va;
+
+    va.push_back(a1);
+    va.push_back(a2);
+    va.push_back(a3);
+
+    for(int i=0; i<va.size(); ++i )
+    {
+        va[i].info();
+    }
+
+
     /*
     vector<int> iv;
     for( int i=0; i<10; ++i )
